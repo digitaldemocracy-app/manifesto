@@ -1,0 +1,37 @@
+name: Support / sign
+description: Sign the manifesto without opening a pull request yourself. A maintainer adds your line to SIGNATURES.md.
+title: "Signature: "
+labels: ["signature"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        If you are comfortable with GitHub, the simplest way to sign is to add one line to [SIGNATURES.md](../blob/main/SIGNATURES.md) in a pull request. If not, fill this in and a maintainer will add the line for you, citing this issue in the commit so the record stays verifiable.
+
+        Everything you write here is public forever. Do not add e-mail addresses, phone numbers or any other personal data.
+  - type: input
+    id: name
+    attributes:
+      label: Name
+      description: As you want it shown. A real name is encouraged, not required.
+    validations:
+      required: true
+  - type: input
+    id: where
+    attributes:
+      label: Where (optional)
+      description: Country, region or city — as broad or as specific as you like.
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation
+      options:
+        - label: I have read the manifesto and I support its starting point.
+          required: true
+        - label: I understand my name will be published in SIGNATURES.md, and that I can ask for it to be removed later.
+          required: true
+  - type: textarea
+    id: message
+    attributes:
+      label: A word (optional)
+      description: If you want to say why you sign, in any language.

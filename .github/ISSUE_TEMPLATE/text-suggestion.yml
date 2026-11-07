@@ -1,0 +1,45 @@
+name: Text suggestion
+description: Propose a change to the wording or the ideas of the manifesto, or ask a question about it.
+title: "[Text] "
+labels: ["text"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you. The manifesto is a starting point and is open to correction. Substantive changes start here, as an issue, so the reasoning is public before any edit. Typos and broken links can go straight to a pull request.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of suggestion is this?
+      options:
+        - Wording (same idea, better words)
+        - Idea (change, add or remove a point)
+        - Question or objection
+    validations:
+      required: true
+  - type: input
+    id: where
+    attributes:
+      label: Where in the text?
+      description: Section title and, if possible, the first words of the paragraph. Say which file if it is not the English README.
+      placeholder: 'What we propose — "Your vote is yours."'
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: Current text
+      description: Paste the passage as it is now (leave empty for a question).
+  - type: textarea
+    id: proposed
+    attributes:
+      label: Proposed text, or your question
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why?
+      description: The reasoning. Arguments have sides, and sides have arguments.
+    validations:
+      required: true

@@ -1,0 +1,40 @@
+name: Translation or review
+description: Offer a new translation, or review an existing one.
+title: "[Translation] "
+labels: ["translation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Translating and reviewing is the first thing a community does together here. Check [translations/README.md](../blob/main/translations/README.md) first: if your language already has an open issue, join it instead of opening a new one.
+  - type: input
+    id: language
+    attributes:
+      label: Language
+      description: Name and ISO 639-1 code (for example "Spanish (es)"). Any language is welcome, not only the ten listed.
+    validations:
+      required: true
+  - type: dropdown
+    id: role
+    attributes:
+      label: What do you want to do?
+      options:
+        - Translate (the language has no text yet)
+        - Review an existing translation
+        - Both
+    validations:
+      required: true
+  - type: dropdown
+    id: native
+    attributes:
+      label: Are you a native speaker of this language?
+      options:
+        - "Yes"
+        - "No, but fluent"
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Anything the maintainers should know — regional variant, words that are hard to translate, when you expect to open the pull request. For a review, list the passages you would change and why.
